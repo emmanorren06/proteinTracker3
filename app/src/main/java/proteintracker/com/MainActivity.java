@@ -12,6 +12,19 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private View.OnClickListener helpButtonListener = new View.OnClickListener()
+    {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(MainActivity.this,HelpActivity.class);
+            Bundle b = new Bundle();
+            EditText myEditText = (EditText)findViewById(R.id.editText);
+            b.putString("HelpString",myEditText.getText().toString());
+            intent.putExtras(b);
+            startActivity(intent);
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,15 +33,46 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.mainActivityTextView);
         textView.setText(R.string.test_untuk_update_view);
 
-        Button myBtn = (Button) findViewById(R.id.button);
-        Button buttonLayout = findViewById(R.id.buttonLayout);
-        buttonLayout.setOnClickListener(new View.OnClickListener() {
+        Button helpBtn = (Button) findViewById(R.id.helpButton);
+        helpBtn.setOnClickListener(helpButtonListener);
+
+        Button btnlayout = (Button) findViewById(R.id.buttonLayout);
+
+        Button appBtn = (Button)findViewById(R.id.appButton);
+
+        Button fragmentbtn = (Button)findViewById(R.id.buttonFragment);
+
+        Button btnMahasiswa = (Button)findViewById(R.id.btnMahasiswa);
+        btnMahasiswa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (MainActivity.this,Main2Activity.class);
-                startActivity(intent);
+                Intent i = new Intent(MainActivity.this,BlankFragment4Mahasiswa.class);
+                startActivity(i);
             }
         });
+        fragmentbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,Main3FragmentActivity.class);
+                startActivity(i);
+            }
+        });
+        appBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,Main3Activity.class);
+                startActivity(i);
+            }
+        });
+        btnlayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,Main2Activity.class);
+                startActivity(i);
+            }
+        });
+
+        Button myBtn = (Button)findViewById(R.id.button);
         myBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,32 +82,10 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-        if(savedInstanceState != null){
-            Log.d("ProteinTracker",savedInstanceState.getString("abc")); }
-       //myBtn.setOnClickListener(myBtnClickListener);
-        Button helpBtn = (Button)findViewById(R.id.helpButton);
-        helpBtn.setOnClickListener(helpButtonListener);
-
-
-       myBtn.setOnClickListener(helpButtonLis);
+        if(savedInstanceState != null) {
+            Log.d("ProteinTracker", savedInstanceState.getString("abc"));
+        }
     }
-
-    private View.OnClickListener myBtnClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            EditText myEditText = (EditText) findViewById(R.id.editText);
-            Log.d("Proteintracker", myEditText.getText().toString());
-        }
-    };
-    private View.OnClickListener helpButtonListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent intent = new Intent(MainActivity.this,HelpActivity.class);
-            startActivity(intent);
-
-        }
-    };
-
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -72,22 +94,5 @@ public class MainActivity extends AppCompatActivity {
         outState.putString("abc","test");
         super.onSaveInstanceState(outState);
     }
-    private View.OnClickListener helpButtonLis = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent intent = new Intent(MainActivity.this,HelpActivity.class);
-
-        Bundle b = new Bundle();
-
-        EditText myEditText = (EditText)findViewById(R.id.editText);
-
-        b.putString("helpString",myEditText.getText().toString());
-        intent.putExtras(b);
-
-        startActivity(intent);
-        }
-    };
-
-
 
 }

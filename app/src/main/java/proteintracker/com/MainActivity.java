@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         btnMahasiswa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,BlankFragment4Mahasiswa.class);
+                Intent i = new Intent(MainActivity.this,Main4Activity.class);
                 startActivity(i);
             }
         });

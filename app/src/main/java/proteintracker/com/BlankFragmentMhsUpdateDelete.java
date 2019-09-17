@@ -1,13 +1,19 @@
 package proteintracker.com;
 
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 /**
@@ -25,7 +31,7 @@ public class BlankFragmentMhsUpdateDelete extends Fragment {
     private String mParam1;
     private String mParam2;
 
-
+    SendData s;
     public BlankFragmentMhsUpdateDelete() {
         // Required empty public constructor
     }
@@ -64,4 +70,43 @@ public class BlankFragmentMhsUpdateDelete extends Fragment {
         return inflater.inflate(R.layout.fragment_blank_fragment_mhs_update_delete, container, false);
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Button btnCreateData = view.findViewById(R.id.btnInsert);
+        btnCreateData.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                s.click();
+            }
+        });
+        Button btnUpdateData = view.findViewById(R.id.btnUpdate);
+        btnUpdateData.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                s.click();
+            }
+        });
+        Button btnDeleteData = view.findViewById(R.id.btnDelete);
+        btnDeleteData.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                s.click();
+            }
+        });
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try{
+            s = (SendData) getActivity();
+        }catch(ClassCastException e){
+            throw new ClassCastException("Error in retrieving data. Pleas try again");
+        }
+    }
+
+    interface SendData{
+        void click();
+    }
 }

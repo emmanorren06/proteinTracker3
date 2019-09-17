@@ -1,13 +1,19 @@
 package proteintracker.com;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 /**
@@ -25,6 +31,7 @@ public class BlankFragment4Mahasiswa extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    SendData2 s;
 
     public BlankFragment4Mahasiswa() {
         // Required empty public constructor
@@ -63,6 +70,30 @@ public class BlankFragment4Mahasiswa extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_blank_fragment4_mahasiswa, container, false);
     }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Button btnReadData = view.findViewById(R.id.btnSimpan);
+        btnReadData.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                s.click2();
+            }
+        });
+    }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try{
+            s = (SendData2) getActivity();
+        }catch(ClassCastException e){
+            throw new ClassCastException("Error in retrieving data. Pleas try again");
+        }
+    }
+
+    interface SendData2{
+        void click2();
+    }
 
 }

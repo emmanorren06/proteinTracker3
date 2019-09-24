@@ -42,7 +42,7 @@
             app:layout_constraintVertical_bias="0.854" />
 
         <EditText
-            android:id="@+id/editTextTelp"
+            android:id="@+id/delTextTelp"
             android:layout_width="213dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
@@ -75,7 +75,7 @@
             app:layout_constraintVertical_bias="0.722" />
 
         <EditText
-            android:id="@+id/editTextAlamat"
+            android:id="@+id/delTextAlamat"
             android:layout_width="209dp"
             android:layout_height="38dp"
             android:layout_marginStart="8dp"
@@ -107,7 +107,7 @@
             app:layout_constraintVertical_bias="0.63" />
 
         <EditText
-            android:id="@+id/editTextJK"
+            android:id="@+id/delTextJK"
             android:layout_width="210dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
@@ -139,7 +139,7 @@
             app:layout_constraintVertical_bias="0.534" />
 
         <EditText
-            android:id="@+id/editTextAgama"
+            android:id="@+id/delTextAgama"
             android:layout_width="211dp"
             android:layout_height="37dp"
             android:layout_marginStart="8dp"
@@ -186,7 +186,7 @@
             app:layout_constraintVertical_bias="0.369" />
 
         <EditText
-            android:id="@+id/editTextTglLahir"
+            android:id="@+id/delTextTglLahir"
             android:layout_width="213dp"
             android:layout_height="40dp"
             android:layout_marginStart="8dp"
@@ -218,7 +218,7 @@
             app:layout_constraintVertical_bias="0.295" />
 
         <EditText
-            android:id="@+id/editTextTemLahir"
+            android:id="@+id/delTextTemLahir"
             android:layout_width="206dp"
             android:layout_height="36dp"
             android:layout_marginStart="8dp"
@@ -235,7 +235,7 @@
             app:layout_constraintVertical_bias="0.284" />
 
         <EditText
-            android:id="@+id/editTextNama"
+            android:id="@+id/delTextNama"
             android:layout_width="171dp"
             android:layout_height="38dp"
             android:layout_marginStart="8dp"
@@ -267,7 +267,7 @@
             app:layout_constraintVertical_bias="0.208" />
 
         <EditText
-            android:id="@+id/editTextNim"
+            android:id="@+id/delTextNim"
             android:layout_width="196dp"
             android:layout_height="36dp"
             android:layout_marginStart="8dp"

@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DeleteActivity"></activity>
+        <activity android:name=".RecyclerMhsActivity"></activity>
+        <activity android:name=".RecyclerViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DeleteActivity" />
         <activity android:name=".EditActivity" />
         <activity android:name=".AddActivity" />
         <activity android:name=".MainKelolaActivity" />
@@ -19,13 +27,7 @@
         <activity android:name=".Main3FragmentActivity" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".HelpActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

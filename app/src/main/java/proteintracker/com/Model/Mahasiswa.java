@@ -24,19 +24,23 @@ public class Mahasiswa {
     }
 
     public String getNpm() {
+
         return npm;
     }
 
     public void setNpm(String npm) {
+
         this.npm = npm;
     }
 
     public String getNohp() {
+
         return nohp;
     }
 
     public void setNohp(String nohp)
     {
+
         this.nohp = nohp;
     }
 }

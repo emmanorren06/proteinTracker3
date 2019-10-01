@@ -48,6 +48,25 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnKelMhs = (Button) findViewById(R.id.btnKelolaMhs);
 
+        Button btnRVmhs = (Button) findViewById(R.id.btnRVmhs);
+
+        Button btnMhsSI = (Button) findViewById(R.id.btnMhsSI);
+        btnMhsSI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,RecyclerMhsActivity.class);
+                startActivity(i);
+            }
+        });
+
+        btnRVmhs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,RecyclerViewActivity.class);
+                startActivity(i);
+            }
+        });
+
         btnKelMhs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
